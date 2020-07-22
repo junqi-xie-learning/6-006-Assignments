@@ -11,7 +11,7 @@ If you found any mistakes in the solutions, please create an issue or contact me
 
 ## Current Progress
 
-* [ ] Problem Set 1: Peak Finding
+* [x] Problem Set 1: Peak Finding
 * [ ] Problem Set 2: Digital Circuit Simulation
 * [ ] Problem Set 3: Digital Circuit Layout
 * [ ] Problem Set 4: Matching DNA Sequences
