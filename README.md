@@ -14,7 +14,7 @@ If you found any mistakes in the solutions, please create an issue or contact me
 * [x] Problem Set 1: Peak Finding
 * [x] Problem Set 2: Digital Circuit Simulation
 * [x] Problem Set 3: Digital Circuit Layout
-* [ ] Problem Set 4: Matching DNA Sequences
+* [x] Problem Set 4: Matching DNA Sequences
 * [ ] Problem Set 5: RSA Public-Key Encryption
 * [ ] Problem Set 6: Rubik’s Cube and Dijkstra
 * [ ] Problem Set 7: Seam Carving
