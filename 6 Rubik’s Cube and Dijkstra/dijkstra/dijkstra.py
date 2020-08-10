@@ -195,7 +195,39 @@ class PathFinder(object):
             A tuple: (the path as a list of nodes from source to destination, 
                       the number of visited nodes)
         """
-        return NotImplemented 
+        for node in nodes:
+            node.parent = None
+            node.queue_key = None
+            
+        num_visited = 0
+        q = PriorityQueue()
+
+        source.queue_key = NodeDistancePair(source, 0)
+        q.insert(source.queue_key)
+        while len(q) > 0:
+            queue_key = q.extract_min()
+            node, dist = queue_key.node, queue_key.distance
+            num_visited += 1
+
+            if node == destination:
+                break
+            for next_node in node.adj:
+                next_dist = weight(node, next_node) + dist
+                if not next_node.queue_key:
+                    next_node.queue_key = NodeDistancePair(next_node, next_dist)
+                    q.insert(next_node.queue_key)
+                    next_node.parent = node
+                elif next_dist < next_node.queue_key.distance:
+                    next_node.queue_key.distance = next_dist
+                    q.decrease_key(next_node.queue_key)
+                    next_node.parent = node
+
+        p = []
+        while destination:
+            p.append(destination)
+            destination = destination.parent
+        p.reverse()
+        return (p, num_visited)
         
     @staticmethod
     def from_file(file, network):
